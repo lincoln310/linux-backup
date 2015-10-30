@@ -29,3 +29,14 @@
 * ** CREATE EXTENSION address_standardizer_data_us;
 * ** -- Enable US Tiger Geocoder
 * ** CREATE EXTENSION postgis_tiger_geocoder;
+* 
+* update data from .osm to postgis:
+* ** osm2pgsql -U tsinghua -d location -H 127.0.0.1 -s -S default.style -W -a mapfile.osm
+* ** default.style is in the osm2pgsql directory (github source)
+* ** -a : append/update 
+* ** -c : create; use this instead of -a at the first time
+* ** mapfile.osm is the target.
+* ** -U : username
+* ** -d : database
+* ** -H : host
+* ** -W : password
